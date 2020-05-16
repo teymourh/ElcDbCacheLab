@@ -49,7 +49,7 @@ def get_db_cache():
   connect_databases()
   hits = int(redis_reader_con.get('db_cache_hit_counter'))
   miss = int(redis_reader_con.get('db_cache_miss_counter'))
-  res = make_response(jsonify('{}|{}'.format(hits,miss)),200)
+  res = make_response('{}|{}'.format(hits,miss),200)
   return res
 
 @app.route('/get/log/<LogId>')
@@ -66,7 +66,7 @@ def get_times():
   connect_databases()
   tRedis = float(redis_reader_con.get('db_cahce_redis_time'))
   tMySQL = float(redis_reader_con.get('db_cahce_mysql_time'))
-  res = make_response(jsonify('{}|{}'.format(tRedis,tMySQL)),200)
+  res = make_response('{}|{}'.format(tRedis,tMySQL),200)
   return res
 
 def make_json_from_redis(objs):
