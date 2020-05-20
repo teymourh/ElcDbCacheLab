@@ -5,4 +5,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 # initiate Docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
+sudo reboot
 
